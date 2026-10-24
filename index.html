@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpine Weather · Mountain View</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scroll-container">
+  
+        <section id="hero">
+            <div class="hero-content">
+                <div class="hero-sub">Mountain weather</div>
+                <h1>Alpine Forecast</h1>
+                <p class="hero-desc">Real-time conditions · elevation 2,400 m</p>
+            </div>
+            <div class="scroll-hint">
+                <span>Scroll to explore</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </section>
+
+        <!-- CURRENT WEATHER -->
+        <section id="current-weather" class="fade-section">
+            <div class="glass-card" style="text-align: center;">
+                <h2><i class="fas fa-cloud-sun" style="margin-right: 0.75rem;"></i>Current Weather</h2>
+                <div class="weather-main">
+                    <div class="temp-display">
+                        <i class="fas fa-sun" id="weather-icon"></i>
+                        <div>
+                            <span class="temp-number" id="temperature">12</span><span class="temp-unit">°C</span>
+                        </div>
+                    </div>
+                    <div class="weather-desc">
+                        <h3 id="weather-condition">Partly Cloudy</h3>
+                        <p id="weather-location"><i class="fas fa-location-dot"></i> Mountain Ridge · 2,400m</p>
+                    </div>
+                </div>
+                <button class="refresh-btn" id="refreshBtn"><i class="fas fa-rotate-right"></i> Refresh Weather</button>
+            </div>
+        </section>
+
+        <!-- FORECAST -->
+        <section id="forecast" class="fade-section">
+            <div class="glass-card">
+                <h2><i class="fas fa-calendar-alt" style="margin-right: 0.75rem;"></i>3-Day Forecast</h2>
+                <div class="forecast-row" id="forecastContainer">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAILS -->
+        <section id="details" class="fade-section">
+            <div class="glass-card">
+                <h2><i class="fas fa-chart-simple" style="margin-right: 0.75rem;"></i>Mountain Details</h2>
+                <div class="details-grid" id="detailsContainer">
+                    <!-- Populated by JS -->
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- External JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
