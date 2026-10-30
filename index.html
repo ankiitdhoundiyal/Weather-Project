@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alpine Weather · Mountain View</title>
-  
+    <title>Alpine Weather </title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-   
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
- 
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="scroll-container">
-  
+
         <section id="hero">
             <div class="hero-content">
-                <div class="hero-sub">Mountain weather</div>
+                <div class="hero-sub">weather</div>
                 <h1>Alpine Forecast</h1>
-                <p class="hero-desc">Real-time conditions · elevation 2,400 m</p>
+                <p class="hero-desc" id="hero-desc">Real-time conditions · elevation 2,400 m</p>
             </div>
             <div class="scroll-hint">
                 <span>Scroll to explore</span>
@@ -32,6 +32,17 @@
         <section id="current-weather" class="fade-section">
             <div class="glass-card" style="text-align: center;">
                 <h2><i class="fas fa-cloud-sun" style="margin-right: 0.75rem;"></i>Current Weather</h2>
+
+                <!-- CITY SEARCH -->
+                <div class="search-wrap">
+                    <form class="search-form" id="searchForm" autocomplete="off">
+                        <input type="text" id="searchInput" placeholder="Search a city or place (e.g. Zermatt, Manali)" aria-label="Search city">
+                        <button type="submit"><i class="fas fa-magnifying-glass"></i> Search</button>
+                    </form>
+                    <ul class="suggestions" id="suggestions"></ul>
+                </div>
+                <p class="status-msg" id="statusMsg"></p>
+
                 <div class="weather-main">
                     <div class="temp-display">
                         <i class="fas fa-sun" id="weather-icon"></i>
@@ -61,7 +72,7 @@
         <!-- DETAILS -->
         <section id="details" class="fade-section">
             <div class="glass-card">
-                <h2><i class="fas fa-chart-simple" style="margin-right: 0.75rem;"></i>Mountain Details</h2>
+                <h2><i class="fas fa-chart-simple" style="margin-right: 0.75rem;"></i>Region Details</h2>
                 <div class="details-grid" id="detailsContainer">
                     <!-- Populated by JS -->
                 </div>
